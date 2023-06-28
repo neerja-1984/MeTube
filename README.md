@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+1) download of RapidAPI ext in VSCode
+2) will be using Material UI --> dowload required dependencies [paper / icons / box ..etc]
+3) BrouserRouter / Routes /Route usage
+4) ReactPlayer for playing videos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+4) Constants.js --> required @mui logos / icons
+5) using useNavigate --> to navigate to other routes
 
-## Available Scripts
+6) using axios to make GET request from api
+7) using RapidAPI to fetch from server
 
-In the project directory, you can run:
+8) understanding parts of URL fetched from API
+    `https://youtube-v31.p.rapidapi.com/search?part=snippet&q=${selectedCategory}`
 
-### `npm start`
+    Means :
+        1) https://youtube-v31.p.rapidapi.com/ : base url 
+        2) search : getting the endpoint form url
+        3) part=snippet : API should return only the snippet part of the response[ includes basic information about the search results.]
+        4) q=${selectedCategory} : query == selectedCategory , ie if selectedCategory == technology ; include only technology results
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    `https://youtube-v31.p.rapidapi.com/search?channelId=${id}&part=snippet%2Cid&order=date`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Means : 
+        URL-encoded TIPS : [%20 : space /  %2C :  comma (,)]
+        1) search : API endpoint
+        2) channelId=${id} : get the Channel whose id is as in ${id}
+        3) part=snippet%2Cid : we want to retrieve the "snippet" and "id" parts of the search results. ie [snippet , id]
+        4) order=date :  order the search results by date, showing the most recent videos first.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+9) using hooks such as :
+-useState / useEffect / useNavigate / useParams 
